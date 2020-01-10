@@ -1,26 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="" />
+    <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/GameServer_v0_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/A5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/GameServer_v0.27.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/java-json.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameClient/SimpleGameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ex3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/node_data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/node_data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Graph_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Graph_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Point3D.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VzMNV0JlActMF9NuNOPhXYw2W3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/junit-platform-commons-1.4.0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/GameServer_v0.27.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="gameClient" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Lee\IdeaProjects\Ex3" />
+      <recent name="C:\Users\Lee\IdeaProjects\Ex3\data" />
+      <recent name="C:\Users\Lee\IdeaProjects\Ex3\src\gameClient" />
+      <recent name="C:\Users\Lee\IdeaProjects\Ex3\lib" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\src" />
+      <recent name="C:\Users\Lee\IdeaProjects\Ex3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -35,7 +83,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MyGameGUI">
+    <configuration name="MyGameGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameClient.MyGameGUI" />
+      <module name="Ex3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleGameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameClient.SimpleGameClient" />
+      <module name="Ex3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Graph_AlgoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex3" />
       <extension name="coverage">
@@ -53,6 +127,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyGameGUI" />
+        <item itemvalue="Application.SimpleGameClient" />
         <item itemvalue="JUnit.Graph_AlgoTest" />
       </list>
     </recent_temporary>
@@ -69,10 +145,40 @@
       <updated>1578251429457</updated>
       <workItem from="1578251432589" duration="443000" />
       <workItem from="1578252001616" duration="14000" />
+      <workItem from="1578252045470" duration="1648000" />
+      <workItem from="1578301483001" duration="4487000" />
+      <workItem from="1578428985246" duration="3899000" />
+      <workItem from="1578474377584" duration="159000" />
+      <workItem from="1578495481411" duration="739000" />
+      <workItem from="1578640220638" duration="25568000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gameClient/MyGameGUI.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

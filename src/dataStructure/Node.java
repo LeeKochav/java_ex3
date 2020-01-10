@@ -11,8 +11,13 @@ public class Node implements node_data, Serializable {
     private String info;
     private int tag;
     private double weight;
+    private Point3D gui_location;
 
     public Node(){}
+    public Node(int key, Point3D p) {
+        this.key=key;
+        this.setLocation(p);
+    }
 
     public Node(int key)
     {
@@ -49,6 +54,23 @@ public class Node implements node_data, Serializable {
     public void setLocation(Point3D p) {
         this.location=new Point3D(p);
     }
+
+    /** Allows changing this node's Gui location for drawing the node.
+     *
+     * @param x,y -  new location  (position) of this node.
+     */
+    @Override
+    public void setGuiLocation(double x, double y) {
+        this.gui_location=new Point3D(x,y);
+    }
+
+    /** Return the Gui location (of applicable) of this node, if
+     * none return null.
+     *
+     * @return
+     */
+    @Override
+    public Point3D getGuiLocation() { return this.gui_location; }
 
     @Override
     public double getWeight() {
@@ -88,5 +110,11 @@ public class Node implements node_data, Serializable {
     @Override
     public void setTag(int t) {
         this.tag=t;
+    }
+
+    public String toJSON() {
+        String ans = "";
+        ans = ans + "{key:" + this.getKey() + ",info:" + this.getInfo() + "}";
+        return ans;
     }
 }

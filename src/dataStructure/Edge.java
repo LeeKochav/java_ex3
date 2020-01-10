@@ -42,11 +42,19 @@ public class Edge implements edge_data, Serializable {
     public String getInfo() {
         return this.info;
     }
+
+//    @Override
+//    public String toString()
+//    {
+//        return this.getInfo();
+//    }
     @Override
-    public String toString()
-    {
-        return this.getInfo();
+    public String toString() {
+        String ans = "";
+        ans = ans + "e(" + this.getSrc() + "," + this.getDest()+ "), w:" + this.getWeight() + ",extra p: " + this.getTag() + "," + this.getInfo();
+        return ans;
     }
+
 
     @Override
     public void setInfo(String s) {
@@ -65,5 +73,11 @@ public class Edge implements edge_data, Serializable {
     @Override
     public void setTag(int t) {
             this.tag = t;
+    }
+
+    public String toJSON() {
+        String ans = "";
+        ans = ans + "{src:" + this.getSrc() + ",dest:" + this.getDest() + ",weight:" + this.getWeight() + "}";
+        return ans;
     }
 }

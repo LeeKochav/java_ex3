@@ -56,4 +56,17 @@ public interface node_data {
 	 * @param t - the new value of the tag
 	 */
 	public void setTag(int t);
+
+	/** Allows changing this node's Gui location for drawing the node.
+	 *
+	 * @param x,y - new new location  (position) of this node.
+	 */
+	public void setGuiLocation(double x, double y);
+
+	/** Return the Gui location (of applicable) of this node, if
+	 * none return null.
+	 *
+	 * @return
+	 */
+	public Point3D getGuiLocation();
 }
