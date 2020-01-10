@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/GameServer_v0_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/A5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/GameServer_v0.27.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/java-json.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameClient/SimpleGameClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/node_data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/node_data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Graph_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Graph_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Point3D.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +123,7 @@
       <workItem from="1578428985246" duration="3899000" />
       <workItem from="1578474377584" duration="159000" />
       <workItem from="1578495481411" duration="739000" />
-      <workItem from="1578640220638" duration="25568000" />
+      <workItem from="1578640220638" duration="25915000" />
     </task>
     <servers />
   </component>
