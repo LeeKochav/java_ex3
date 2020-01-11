@@ -13,6 +13,8 @@ import gui.Graph_GUI;
 import netscape.javascript.JSObject;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.junit.platform.commons.function.Try;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import utils.Point3D;
 
 import javax.swing.*;
@@ -38,6 +40,7 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
     private game_service game;
     final int FRAME_WIDTH=1000;
     final  int FRAME_HEIGHT=1000;
+    static int user_Dst=-1;
 
     public MyGameGUI(int num_scenario) throws InterruptedException {
         game_service game = Game_Server.getServer(num_scenario);
@@ -80,15 +83,26 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
             Robot robot_tmp=new Robot(robot);
             robots.add(robot_tmp);
         }
-        initGui(FRAME_WIDTH,FRAME_HEIGHT);
-        game.startGame();
-        while(game.isRunning()) {
-            moveRobots(game,graph);
-            Thread.sleep(200);
-            repaint();
-        }
-        String results = game.toString();
-        System.out.println("Game Over: "+results);
+
+        JLabel time=new JLabel();
+        JTextField text=new JTextField();
+        text.setFont(new Font("deafult", Font.BOLD,14));
+        time.setFont(new Font("deafult", Font.BOLD,20));
+        this.setBounds(200, 0, FRAME_WIDTH, FRAME_HEIGHT);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("My Game GUI");
+        this.add(time,BorderLayout.NORTH);
+        addMouseListener(this);
+        this.setVisible(true);
+            game.startGame();
+            while (game.isRunning()) {
+                time.setText("Time: " + game.timeToEnd() / 1000);
+                Thread.sleep(250);
+                moveRobots(game, graph);
+                repaint();
+            }
+            String results = game.toString();
+            JOptionPane.showMessageDialog(this, "Game over: " + results, "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void moveRobots(game_service game, graph graph) { //choseNextEdge= next node, move= moves all rovots
@@ -104,9 +118,11 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
                     int src = ttt.getInt("src");
                     int dest = ttt.getInt("dest");
                     String pos=ttt.getString("pos");
+                    int dst=user_Dst;
 
                     if (dest == -1) {
-                        dest = nextNode(graph,src);
+
+                       dest = nextNode(graph,src,dst);
                         game.chooseNextEdge(rid, dest);
                         System.out.println("Turn to node: " + dest + "  time to end:" + (t / 1000));
                         System.out.println(ttt);
@@ -123,20 +139,19 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
                 fruits.add(fruit_tmp);
             }
             fruits.sort(comp);
-            System.out.println(this.fruits);
         }
     }
-    private static int nextNode(graph g, int src) {
-        int ans = -1;
-        Collection<edge_data> ee = g.getE(src);
-        Iterator<edge_data> itr = ee.iterator();
-        int s = ee.size();
-        int r = (int)(Math.random()*s);
-        int i=0;
-        while(i<r) {itr.next();i++;}
-        ans = itr.next().getDest();
-        return ans;
+
+    private int nextNode( graph graph,int src,int dst)
+    {
+        node_data n_src=this.graph.getNode(src);
+        for (edge_data e:this.graph.getE(src)) {
+            if(e.getDest()==dst)
+                return dst;
+        }
+        return -1;
     }
+
     private void setFruitsEdge(Fruit fruit)
     {
             for (node_data node:this.graph.getV()) {
@@ -161,22 +176,18 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
             }
         }
     }
-    private void initGui(int width, int height) {
-        this.setBounds(200, 0, width, height);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("My Game GUI");
-        this.setVisible(true);
-
-    }
+//    private void initGui(int width, int height) {
+//
+//    }
     public void paint(Graphics graphics)
     {
+        super.paint(graphics);
         double []x_toScale=find_min_max_axis();
         double []y_toScale=find_min_max_ayis();
         Graphics2D g=(Graphics2D) graphics;
-        super.paint(g);
         for (node_data node: graph.getV()) {
             g.setColor(Color.BLUE);
-            Shape circle= new Arc2D.Double(node.getGuiLocation().x()-3,node.getGuiLocation().y()-3,NODE_WIDTH_HEIGHT,NODE_WIDTH_HEIGHT,0,360,Arc2D.CHORD);
+            Shape circle= new Arc2D.Double(node.getGuiLocation().x()-3,node.getGuiLocation().y()-3,15,15,0,360,Arc2D.CHORD);
             g.fill(circle);
             String id=node.getKey()+"";
             g.setFont(new Font("deafult", Font.BOLD,14));
@@ -210,8 +221,6 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
                     String weight = edge.getWeight() + "";
                     node_data dst = graph.getNode(edge.getDest());
                     g.drawLine(node.getGuiLocation().ix(), node.getGuiLocation().iy(), dst.getGuiLocation().ix(), dst.getGuiLocation().iy());
-//                    double dist = node.getGuiLocation().distance2D(dst.getGuiLocation());
-//                    g.drawString(weight, (int) ((node.getGuiLocation().x() + dst.getGuiLocation().x()) / 2), (int) ((node.getGuiLocation().y() + dst.getGuiLocation().y()) / 2));
                     g.setColor(Color.RED);
 
                     //calculate the direction oval location
@@ -306,7 +315,16 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        String dst_str=JOptionPane.showInputDialog(this,"Please insert node number to move, "+"\n"+ "only neighbors nodes are allowed: ");
+        try
+        {
+           int dst=Integer.parseInt(dst_str);
+           user_Dst=dst;
+        }
+        catch (Exception ee)
+        {
+          JOptionPane.showMessageDialog(this,"Invalid input","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     @Override
@@ -329,15 +347,15 @@ public class MyGameGUI  extends JFrame implements ActionListener , MouseListener
 
     }
 
-    public static void main(String[] a) throws InterruptedException {
-
-
-//        game_service game = Game_Server.getServer(2); // you have [0,23] games
-//        System.out.println(game.getGraph());
-        MyGameGUI m = new MyGameGUI(2);
-
-      //  System.out.println(m.g);
-    }
+//    public static void main(String[] a) throws InterruptedException {
+//
+//
+////        game_service game = Game_Server.getServer(2); // you have [0,23] games
+////        System.out.println(game.getGraph());
+//        MyGameGUI m = new MyGameGUI(3);
+//
+//      //  System.out.println(m.g);
+//    }
 
 
 }
