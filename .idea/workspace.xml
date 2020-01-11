@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gameClient/My_Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/NodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/NodeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/StdDraw.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +64,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.My_Game_Manual">
     <configuration name="MyGameGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gameClient.MyGameGUI" />
       <module name="Ex3" />
@@ -74,8 +78,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleGameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gameClient.SimpleGameClient" />
+    <configuration name="My_Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameClient.My_Game" />
       <module name="Ex3" />
       <extension name="coverage">
         <pattern>
@@ -87,8 +91,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gameClient.Test" />
+    <configuration name="SimpleGameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameClient.SimpleGameClient" />
       <module name="Ex3" />
       <extension name="coverage">
         <pattern>
@@ -117,8 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.MyGameGUI" />
+        <item itemvalue="Application.My_Game_Manual" />
         <item itemvalue="Application.SimpleGameClient" />
         <item itemvalue="JUnit.Graph_AlgoTest" />
       </list>
@@ -141,7 +145,7 @@
       <workItem from="1578428985246" duration="3899000" />
       <workItem from="1578474377584" duration="159000" />
       <workItem from="1578495481411" duration="739000" />
-      <workItem from="1578640220638" duration="60097000" />
+      <workItem from="1578640220638" duration="62292000" />
     </task>
     <servers />
   </component>
@@ -165,7 +169,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/gameClient/MyGameGUI.java</url>
+          <url>file://$PROJECT_DIR$/src/gameClient/My_Game.java</url>
           <line>60</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>

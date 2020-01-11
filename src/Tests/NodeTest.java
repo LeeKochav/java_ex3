@@ -59,8 +59,8 @@ class NodeTest {
 
     @Test
     void setInfo() {
-        n.setInfo("Test");
-        assertEquals("Test",n.getInfo());
+        n.setInfo("TEST");
+        assertEquals("TEST",n.getInfo());
     }
 
     @Test
