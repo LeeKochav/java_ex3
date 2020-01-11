@@ -88,7 +88,7 @@ public class Node implements node_data, Serializable {
     }
 
     @Override
-    public String toString()  {return new String("Node"+this.key);}
+    public String toString()  {return new String("Node"+this.key+" "+"pos: "+this.getLocation()+" "+" gui: "+this.getGuiLocation());}
 
     @Override
     public void setInfo(String s) {
