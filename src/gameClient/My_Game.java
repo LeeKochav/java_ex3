@@ -35,6 +35,7 @@ public class My_Game extends JFrame implements ActionListener , MouseListener{
     final int FRAME_WIDTH=1000;
     final  int FRAME_HEIGHT=1000;
     static int user_Dst=-1;
+    private boolean mode;
 
     public My_Game(int num_scenario) throws InterruptedException {
         game_service game = Game_Server.getServer(num_scenario);
@@ -58,7 +59,7 @@ public class My_Game extends JFrame implements ActionListener , MouseListener{
             for(int i=0; i<num_robots; i++)
             {
                 if(i<this.fruits.size()) {
-                    int src = this.fruits.get(i).getEdge().getSrc();
+                 int src = this.fruits.get(i).getEdge().getSrc();
                     node_data node_src = this.graph.getNode(src);
                     Point3D src_p = node_src.getLocation();
                     game.addRobot(src);
@@ -91,7 +92,7 @@ public class My_Game extends JFrame implements ActionListener , MouseListener{
             game.startGame();
             while (game.isRunning()) {
                 time.setText("Time: " + game.timeToEnd() / 1000);
-                Thread.sleep(250);
+                Thread.sleep(100);
                 moveRobots(game, graph);
                 repaint();
             }

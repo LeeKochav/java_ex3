@@ -1,5 +1,6 @@
 package gameClient;
 
+import dataStructure.node_data;
 import org.json.JSONObject;
 import utils.Point3D;
 
@@ -14,6 +15,8 @@ public class Robot {
     private Point3D gui_location;
 
 
+
+
     public  Robot(){}
 
     public Robot(String jsonSTR)
@@ -24,6 +27,7 @@ public class Robot {
             robot=robot.getJSONObject("Robot");
             double val = robot.getDouble("value");
             int src=robot.getInt("src");
+            int id=robot.getInt("id");
             int dst=robot.getInt("dest");
             double speed=robot.getDouble("speed");
             String pos=robot.getString("pos");
@@ -32,6 +36,7 @@ public class Robot {
             this.src=src;
             this.dest=dst;
             this.speed=speed;
+            this.id=id;
             this.setGui_location(0,0);
         }
         catch (Exception e)
@@ -108,4 +113,6 @@ public class Robot {
     public void setGui_location(double x, double y) {
         this.gui_location = new Point3D(x,y);
     }
+
+
 }
