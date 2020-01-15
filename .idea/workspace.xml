@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/My_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/My_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Game_Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game_Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Robot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -157,7 +159,7 @@
       <workItem from="1578428985246" duration="3899000" />
       <workItem from="1578474377584" duration="159000" />
       <workItem from="1578495481411" duration="739000" />
-      <workItem from="1578640220638" duration="87781000" />
+      <workItem from="1578640220638" duration="95604000" />
     </task>
     <servers />
   </component>

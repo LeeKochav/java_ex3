@@ -3,6 +3,7 @@ package gameClient;
 import Server.game_service;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main_Thread extends Thread {
 
@@ -15,6 +16,7 @@ public class Main_Thread extends Thread {
     {
         game =new Game(stage);
         game_gui=new Game_Gui(game,mode);
+
     }
 
     public static void init()
@@ -26,16 +28,16 @@ public class Main_Thread extends Thread {
         welcome_screen.setTitle("The Maze Of Waze");
         welcome_screen.setVisible(true);
         JOptionPane.showMessageDialog(welcome_screen,"Welcome!","WELCOME",JOptionPane.INFORMATION_MESSAGE);
-        String stage_str=JOptionPane.showInputDialog(welcome_screen,"Please insert stage [0-23]");
+        String stage_str=JOptionPane.showInputDialog(welcome_screen,"Please insert stage [0-23] to play");
         int option=JOptionPane.showOptionDialog(welcome_screen,"Please choose mode","INFORMATIN",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,modes,modes[1]);
         try
         {
              stage=Integer.parseInt(stage_str);
-             if(option==0)
+             if(option==0) //mode =manual
              {
                  mode=0;
              }
-             if(option==1)
+             if(option==1) //mode =automate
              {
                  mode=1;
              }
@@ -49,20 +51,25 @@ public class Main_Thread extends Thread {
 
     @Override
     public void run() {
-        game_service client_game=this.game.getMy_game();
+        game_service client_game = this.game.getMy_game();
         client_game.startGame();
-        while(client_game.isRunning()) {
-            client_game.move();
+        if(mode==1)
+        {
+            Algo_Game ag=new Algo_Game(game);
+            ag.start();
+        }
+        while (client_game.isRunning()) {
             try {
-                Thread.sleep(250);
+                Thread.sleep(150);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            client_game.move();
             this.game.Update();
             game_gui.repaint();
         }
+        JOptionPane.showMessageDialog(game_gui,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
     }
-
     public static void main(String[]args)
     {
         init();

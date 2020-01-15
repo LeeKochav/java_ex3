@@ -39,7 +39,9 @@ public class Game_Gui extends JFrame implements ActionListener, MouseListener {
         this.setTitle("My Game GUI");
         this.add(robot_info,BorderLayout.CENTER);
         this.add(time, BorderLayout.NORTH);
-        addMouseListener(this);
+        if(this.mode==0) {
+            addMouseListener(this);
+        }
         this.setVisible(true);
     }
 
@@ -75,10 +77,10 @@ public class Game_Gui extends JFrame implements ActionListener, MouseListener {
             int node_x = (int) scale(node.getLocation().x(), x_toScale[0], x_toScale[1], 50, WIDTH-50);
             int node_y = (int) scale(node.getLocation().y(), y_toScale[0], y_toScale[1], 200, HEIGHT-200);
 
-            g.setColor(Color.BLUE);
+            g.setColor(Color.BLACK);
             g.fillOval(node_x - 5, node_y - 5, 10, 10);
 
-            g.setColor(Color.BLACK);
+            g.setColor(Color.BLUE);
             g.setFont(new Font("Arial", Font.BOLD, 15));
             g.drawString(node.getKey() + "", node_x + 5, node_y + 5);
 
@@ -93,11 +95,11 @@ public class Game_Gui extends JFrame implements ActionListener, MouseListener {
                     int dest_x = (int) scale(dest.getLocation().x(), x_toScale[0], x_toScale[1], 50, WIDTH-50);
                     int dest_y = (int) scale(dest.getLocation().y(), y_toScale[0], y_toScale[1], 200, HEIGHT-200);
 
-                    g.setColor(Color.RED);
+                    g.setColor(Color.BLACK);
                     g.drawLine(src_x, src_y, dest_x, dest_y);
 
 
-                    g.setColor(Color.YELLOW);
+                    g.setColor(Color.RED);
                     int dir_x = (((((((src_x + dest_x) / 2) + dest_x) / 2) + dest_x) / 2) + dest_x) / 2;
                     int dir_y = (((((((src_y + dest_y) / 2) + dest_y) / 2) + dest_y) / 2) + dest_y) / 2;
 
@@ -155,7 +157,6 @@ public class Game_Gui extends JFrame implements ActionListener, MouseListener {
             ArrayList<Robot> tmp_robot = (ArrayList<Robot>) this.my_game.getRobots().clone();
             synchronized (tmp_robot) {
                 for (Robot robot : tmp_robot) {
-                    System.out.println(robot.getId());
                     if (robot.getDest() == -1) {
                         String dst_str = JOptionPane.showInputDialog(this, "Please insert robot " + robot.getId() + " next node destination");
                       try {

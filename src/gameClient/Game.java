@@ -61,7 +61,7 @@ public class Game {
         }
     }
 
-    public ArrayList<Robot> getRobots() {
+    public synchronized ArrayList<Robot> getRobots() {
         return this.robots;
     }
 

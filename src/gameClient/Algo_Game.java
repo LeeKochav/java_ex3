@@ -1,68 +1,62 @@
-//package gameClient;
-//
-//import Server.game_service;
-//import dataStructure.edge_data;
-//import dataStructure.graph;
-//import dataStructure.node_data;
-//import org.json.JSONException;
-//import org.json.JSONObject;
-//import utils.Point3D;
-//
-//import java.util.List;
-//
-//public class Algo_Game extends Thread{
-//
-//    private Game my_game;
-//
-//    public Algo_Game(int num_scenario)
-//    {
-//        my_game=new Game(num_scenario);
-//        this.start();
-//    }
-//
-//    @Override
-//    public void run() {
-//        super.run();
-//    }
-//
-//    private void moveRobots(game_service game, graph graph) { //choseNextEdge= next node, move= moves all rovots
-//        List<String> log = game.move();
-//        if (log != null) {
-//            long t = game.timeToEnd();
-//            for (int i = 0; i < log.size(); i++) {
-//                String robot_json = log.get(i);
-//                try {
-//                    JSONObject line = new JSONObject(robot_json);
-//                    JSONObject ttt = line.getJSONObject("Robot");
-//                    int rid = ttt.getInt("id");
-//                    int src = ttt.getInt("src");
-//                    int dest = ttt.getInt("dest");
-//                    String pos = ttt.getString("pos");
-//                    int dst = -1;
-//
-//                    if (dest == -1) {
-//
-//                        dest = nextNode(rid, dst);
-//                        game.chooseNextEdge(rid, dest);
-//                        System.out.println("Turn to node: " + dest + "  time to end:" + (t / 1000));
-//                        System.out.println(ttt);
-//                    }
-//                    this.robots.get(rid).setLocation(new Point3D(pos));
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//    }
-//
-//    private int nextNode(int rid, int dst)
-//    {
-//        Robot r=this.robots.get(rid);
-//        for (edge_data e:this.graph.getE(r.getSrc())) {
-//            if(e.getDest()==dst)
-//                return dst;
-//        }
-//        return -1;
-//    }
-//
-//}
+package gameClient;
+
+import Server.game_service;
+import dataStructure.edge_data;
+import dataStructure.graph;
+import dataStructure.node_data;
+import oop_dataStructure.oop_edge_data;
+import oop_dataStructure.oop_graph;
+import org.json.JSONException;
+import org.json.JSONObject;
+import utils.Point3D;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+public class Algo_Game extends Thread {
+
+    private Game my_game;
+
+    public Algo_Game(Game game) {
+        my_game = game;
+    }
+
+    @Override
+    public void run() {
+        game_service g = my_game.getMy_game();
+        while (g.isRunning()) {
+            int dst = -1;
+            int dest = -1;
+            ArrayList<Robot> tmp_robot = (ArrayList<Robot>) this.my_game.getRobots().clone();
+            synchronized (tmp_robot) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                for (Robot robot : tmp_robot) {
+
+                    if (robot != null && robot.getDest() == -1) {
+                        dest = nextNode(robot.getSrc());
+                        my_game.getMy_game().chooseNextEdge(robot.getId(), dest);
+                    }
+                }
+            }
+        }
+    }
+
+
+    private  int nextNode( int src) {
+        int ans = -1;
+        Collection<edge_data> ee = my_game.getGraph().getE(src);
+        Iterator<edge_data> itr = ee.iterator();
+        int s = ee.size();
+        int r = (int)(Math.random()*s);
+        int i=0;
+        while(i<r) {itr.next();i++;}
+        ans = itr.next().getDest();
+        return ans;
+    }
+}

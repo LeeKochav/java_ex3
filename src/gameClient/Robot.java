@@ -4,6 +4,8 @@ import dataStructure.node_data;
 import org.json.JSONObject;
 import utils.Point3D;
 
+import java.util.LinkedList;
+
 public class Robot {
 
     private int id;
@@ -14,8 +16,9 @@ public class Robot {
     private Point3D location;
     private Point3D gui_location;
 
-
-
+    public LinkedList<node_data> getPath() {
+        return path;
+    }
 
     public  Robot(){}
 
@@ -44,6 +47,7 @@ public class Robot {
 
             e.printStackTrace();
         }
+        this.path=new LinkedList<>();
     }
 
     public int getId() {
@@ -114,5 +118,11 @@ public class Robot {
         this.gui_location = new Point3D(x,y);
     }
 
+
+    public void setPath(LinkedList<node_data> path) {
+        this.path = path;
+    }
+
+    private LinkedList<node_data> path;
 
 }
