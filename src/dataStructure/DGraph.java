@@ -1,6 +1,7 @@
 package dataStructure;
 
 //import elements.NodeData;
+import gameClient.Main_Thread;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import utils.Point3D;
@@ -198,7 +199,11 @@ public class DGraph implements graph , Serializable {
 				s = nodes.getJSONObject(i).getInt("id");
 				String pos = nodes.getJSONObject(i).getString("pos");
 				Point3D p = new Point3D(pos);
-				this.addNode(new Node(s, p));
+				node_data node=new Node(s,p);
+				if (Main_Thread.km != null) {
+					Main_Thread.km.addPlaceMark("node", node.getLocation().toString());
+				}
+				this.addNode(node);
 			}
 
 			for(i = 0; i < edges.length(); ++i) {

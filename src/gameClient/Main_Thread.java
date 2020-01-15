@@ -11,9 +11,11 @@ public class Main_Thread extends Thread {
     private Game_Gui game_gui;
     private static int stage;
     private  static int mode;
+    public static KML_Logger km=null;
 
     public Main_Thread()
     {
+        km=new KML_Logger(stage);
         game =new Game(stage);
         game_gui=new Game_Gui(game,mode);
 
@@ -53,14 +55,22 @@ public class Main_Thread extends Thread {
     public void run() {
         game_service client_game = this.game.getMy_game();
         client_game.startGame();
+        int dt=100;
         if(mode==1)
         {
             Algo_Game ag=new Algo_Game(game);
             ag.start();
         }
         while (client_game.isRunning()) {
+            for (int i=0; i<game.getRobot_size(); i++)
+            {
+                if(game.getRobots().get(i).getSpeed()>2) {
+                    dt=50;
+                    break;
+                }
+            }
             try {
-                Thread.sleep(150);
+                Thread.sleep(dt);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -68,6 +78,7 @@ public class Main_Thread extends Thread {
             this.game.Update();
             game_gui.repaint();
         }
+        km.kmlEnd();
         JOptionPane.showMessageDialog(game_gui,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
     }
     public static void main(String[]args)

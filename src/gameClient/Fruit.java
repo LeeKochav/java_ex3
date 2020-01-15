@@ -40,6 +40,7 @@ public class Fruit {
             e.printStackTrace();
         }
     }
+
     public int getType() {
       return this.type;
     }

@@ -5,9 +5,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/A5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Fruit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/Game_Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game_Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Robot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +172,7 @@
       <workItem from="1578428985246" duration="3899000" />
       <workItem from="1578474377584" duration="159000" />
       <workItem from="1578495481411" duration="739000" />
-      <workItem from="1578640220638" duration="96728000" />
+      <workItem from="1578640220638" duration="117365000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,7 @@ import utils.Point3D;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 public class Game {
 
@@ -22,7 +23,6 @@ public class Game {
     private int robot_size;
     private double[] scale_x=new double[2];
     private double[] scale_y=new double[2];
-
 
 
     public Game(int num_scenario)
@@ -47,21 +47,28 @@ public class Game {
         this.graph = graph;
     }
 
-    public ArrayList<Fruit> getFruits() {
+     public ArrayList<Fruit> getFruits() {
         return this.fruits;
     }
 
     public void setFruits() {
         synchronized (this.fruits) {
-            this.fruits.clear();
-            for (String fruit : my_game.getFruits()) {
-                Fruit fruit_tmp = new Fruit(fruit);
-                setFruitsEdge(fruit_tmp);
-                this.fruits.add(fruit_tmp);
+                this.fruits.clear();
+                for (String fruit : my_game.getFruits()) {
+                    Fruit fruit_tmp = new Fruit(fruit);
+                    if (Main_Thread.km != null) {
+                        if (fruit_tmp.getType() == 1) {
+                            Main_Thread.km.addPlaceMark("fruit-apple", fruit_tmp.getLocation().toString());
+                        } else {
+                            Main_Thread.km.addPlaceMark("fruit-banana", fruit_tmp.getLocation().toString());
+                        }
+                    }
+                        setFruitsEdge(fruit_tmp);
+                        this.fruits.add(fruit_tmp);
+                    }
+                }
             }
-            this.fruits.sort(comp);
-        }
-    }
+
 
     public Hashtable<Integer,Robot> getRobots()
     {
@@ -96,6 +103,9 @@ public class Game {
     public void setRobots() {
         for (String robot:my_game.getRobots()) {
             Robot robot_tmp = new Robot(robot);
+            if(Main_Thread.km!=null) {
+                Main_Thread.km.addPlaceMark("robot", robot_tmp.getLocation().toString());
+            }
             robots.put(robot_tmp.getId(),robot_tmp);
         }
     }
@@ -123,7 +133,7 @@ public class Game {
                 double dist=node.getLocation().distance3D(dst.getLocation());
                 double tmp=dist-(d1+d2);
                 int t;
-                if(node.getKey()>dst.getKey())
+                if(node.getKey()<dst.getKey())
                 {
                     t=1;
                 }
