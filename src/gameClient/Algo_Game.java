@@ -27,25 +27,17 @@ public class Algo_Game extends Thread {
     public void run() {
         game_service g = my_game.getMy_game();
         while (g.isRunning()) {
-            int dst = -1;
             int dest = -1;
-            ArrayList<Robot> tmp_robot = (ArrayList<Robot>) this.my_game.getRobots().clone();
-            synchronized (tmp_robot) {
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                for (Robot robot : tmp_robot) {
-
-                    if (robot != null && robot.getDest() == -1) {
+                for (int i=0; i<my_game.getRobot_size(); i++) {
+                    Robot robot=my_game.getRobots().get(i);
+                    if (robot.getDest() == -1) {
                         dest = nextNode(robot.getSrc());
                         my_game.getMy_game().chooseNextEdge(robot.getId(), dest);
                     }
                 }
             }
         }
-    }
+
 
 
     private  int nextNode( int src) {

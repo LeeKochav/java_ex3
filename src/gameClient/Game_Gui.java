@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 
@@ -137,14 +138,14 @@ public class Game_Gui extends JFrame implements ActionListener, MouseListener {
         for (int i = 1; i <= rob.size(); i++) {
             g.drawString(rob.get(i - 1), 150, 70 + (20 * i));
         }
-        synchronized (my_game.getRobots()) {
-            for (Robot robot : my_game.getRobots()) {
-                int robot_x = (int) scale(robot.getLocation().x(), x_toScale[0], x_toScale[1], 50, WIDTH - 50);
+        for(int i=0; i<my_game.getRobot_size(); i++)
+        {
+            Robot robot=my_game.getRobots().get(i);
+            int robot_x = (int) scale(robot.getLocation().x(), x_toScale[0], x_toScale[1], 50, WIDTH - 50);
                 int robot_y = (int) scale(robot.getLocation().y(), y_toScale[0], y_toScale[1], 200, HEIGHT - 200);
                 g.setColor(Color.GRAY);
                 g.drawOval(robot_x - 15, robot_y - 15, 30, 30);
                 g.setFont(new Font("Arial", Font.BOLD, 15));
-            }
         }
     }
     @Override
@@ -154,9 +155,8 @@ public class Game_Gui extends JFrame implements ActionListener, MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-            ArrayList<Robot> tmp_robot = (ArrayList<Robot>) this.my_game.getRobots().clone();
-            synchronized (tmp_robot) {
-                for (Robot robot : tmp_robot) {
+                for (int i=0; i<my_game.getRobot_size(); i++) {
+                    Robot robot=my_game.getRobots().get(i);
                     if (robot.getDest() == -1) {
                         String dst_str = JOptionPane.showInputDialog(this, "Please insert robot " + robot.getId() + " next node destination");
                       try {
@@ -170,7 +170,7 @@ public class Game_Gui extends JFrame implements ActionListener, MouseListener {
                     }
                 }
             }
-    }
+
 
     @Override
     public void mousePressed(MouseEvent e) {

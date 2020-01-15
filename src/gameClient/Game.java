@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import utils.Point3D;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class Game {
 
@@ -16,8 +17,9 @@ public class Game {
     private static final VAL_COMP comp = new VAL_COMP();
     private dataStructure.graph graph;
     private ArrayList<Fruit> fruits;
-    private  ArrayList<Robot> robots;
+    private Hashtable<Integer,Robot> robots;
     private game_service my_game;
+    private int robot_size;
     private double[] scale_x=new double[2];
     private double[] scale_y=new double[2];
 
@@ -30,7 +32,7 @@ public class Game {
         find_min_max_axis();
         find_min_max_yais();
         fruits=new ArrayList<Fruit>();
-        robots=new ArrayList<Robot>();
+        robots=new Hashtable<>();
         setFruits();
         initRobots();
         setRobots();
@@ -61,10 +63,10 @@ public class Game {
         }
     }
 
-    public synchronized ArrayList<Robot> getRobots() {
+    public Hashtable<Integer,Robot> getRobots()
+    {
         return this.robots;
     }
-
     private void initRobots()
     {
         try
@@ -92,12 +94,9 @@ public class Game {
         }
     }
     public void setRobots() {
-        synchronized (this.robots) {
-            this.robots.clear();
-            for (String robot : my_game.getRobots()) {
-                Robot robot_tmp = new Robot(robot);
-                robots.add(robot_tmp);
-            }
+        for (String robot:my_game.getRobots()) {
+            Robot robot_tmp = new Robot(robot);
+            robots.put(robot_tmp.getId(),robot_tmp);
         }
     }
 
@@ -201,4 +200,10 @@ public class Game {
     public void setScale_y(double[] scale_y) {
         this.scale_y = scale_y;
     }
+
+    public int getRobot_size() {
+        return this.robots.size();
+    }
+
+
 }
