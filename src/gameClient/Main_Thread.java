@@ -4,6 +4,16 @@ import Server.game_service;
 
 import javax.swing.*;
 
+/**
+ * This class represents the engine of the the "MAZE OF WAZE" game.
+ * Main_Thread attributes:
+ * 1. Game
+ * 2.MyGameGui
+ * 3.stage - game scenario [0-24]
+ * 4.mode- manual/ automate
+ * 5-km - KML_Logger element for the KML files.
+ */
+
 public class Main_Thread extends Thread {
 
     private Game game;
@@ -12,6 +22,9 @@ public class Main_Thread extends Thread {
     private  static int mode;
     public static KML_Logger km=null;
 
+    /**
+     * Constructor initialize Main_Thread attributes
+     */
     public Main_Thread()
     {
         km=new KML_Logger(stage);
@@ -20,6 +33,9 @@ public class Main_Thread extends Thread {
 
     }
 
+    /**
+     * Initialize the welcome fame frame and sets the mode and stage attributes by user input.
+      */
     public static void init()
     {
         String [] modes={"Manual","Automate"};
@@ -30,46 +46,47 @@ public class Main_Thread extends Thread {
         welcome_screen.setVisible(true);
         JOptionPane.showMessageDialog(welcome_screen,"Welcome!","WELCOME",JOptionPane.INFORMATION_MESSAGE);
         String stage_str=JOptionPane.showInputDialog(welcome_screen,"Please insert stage [0-23] to play");
-        int option=JOptionPane.showOptionDialog(welcome_screen,"Please choose mode","INFORMATIN",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,modes,modes[1]);
         try
         {
              stage=Integer.parseInt(stage_str);
-             if(option==0) //mode =manual
+             if(stage<0||stage>23)
              {
-                 mode=0;
-             }
-             if(option==1) //mode =automate
-             {
-                 mode=1;
+                 JOptionPane.showMessageDialog(welcome_screen,"Invalid input for stage, game default will start in stage 0","ERROR",JOptionPane.ERROR_MESSAGE);
+                 stage=0;
              }
         }
         catch (Exception ex)
         {
-            JOptionPane.showMessageDialog(welcome_screen,"ERROR!","ERROR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(welcome_screen,"Invalid input for stage, game default will start in stage 0","ERROR",JOptionPane.ERROR_MESSAGE);
+            stage=0;
+        }
+        int option=JOptionPane.showOptionDialog(welcome_screen,"Please choose mode","INFORMATIN",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,modes,modes[1]);
+        if(option==0) //mode =manual
+        {
+            mode=0;
+        }
+        if(option==1) //mode =automate
+        {
+            mode=1;
         }
         welcome_screen.setVisible(false);
     }
 
+    /**
+     * This function starts the game based on the mode selected, move the robots ,update the robots,fruits collection and repaint the GUI.
+     */
     @Override
     public void run() {
         game_service client_game = this.game.getMy_game();
         client_game.startGame();
-        int dt=100;
         if(mode==1)
         {
             Algo_Game ag=new Algo_Game(game);
             ag.start();
         }
         while (client_game.isRunning()) {
-            for (int i=0; i<game.getRobot_size(); i++)
-            {
-                if(game.getRobots().get(i).getSpeed()>2) {
-                    dt=50;
-                    break;
-                }
-            }
             try {
-                Thread.sleep(dt);
+                Thread.sleep(150);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -80,6 +97,11 @@ public class Main_Thread extends Thread {
         km.kmlEnd();
         JOptionPane.showMessageDialog(game_gui,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
     }
+
+    /**
+     * main function , run the thread
+     * @param args
+     */
     public static void main(String[]args)
     {
         init();
