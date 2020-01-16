@@ -3,12 +3,11 @@ package gameClient;
 import Server.game_service;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Main_Thread extends Thread {
 
     private Game game;
-    private Game_Gui game_gui;
+    private MyGameGUI game_gui;
     private static int stage;
     private  static int mode;
     public static KML_Logger km=null;
@@ -17,7 +16,7 @@ public class Main_Thread extends Thread {
     {
         km=new KML_Logger(stage);
         game =new Game(stage);
-        game_gui=new Game_Gui(game,mode);
+        game_gui=new MyGameGUI(game,mode);
 
     }
 
