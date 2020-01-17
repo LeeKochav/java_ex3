@@ -113,7 +113,7 @@ public class Fruit {
      */
     public String toJSON() {
 
-        String ans = "{\"Fruit\":{\"value\":" + this._value + "," + "\"type\":" + this.type + "," + "\"pos\":\"" + this._pos.toString() + "\"e\":\"" + this._edge.toString() + "\"" + "}" + "}";
+        String ans = "{\"Fruit\":{\"value\":" + this._value + "," + "\"type\":" + this.type + "," + "\"pos\":\"" + this._pos.toString()+ "\"" + "}" + "}";
         return ans;
     }
 

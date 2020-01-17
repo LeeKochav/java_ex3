@@ -34,17 +34,23 @@ public class Algo_Game extends Thread {
      */
     @Override
     public void run() {
-        game_service g = my_game.getMy_game();
-        initRobotPath();
-        while (g.isRunning()) {
-            int dest = -1;
-            for (int i = 0; i < my_game.getRobot_size(); i++) {
-                Robot robot = my_game.getRobots().get(i);
-                if (robot.getDest() == -1) {
-                    dest = nextNode(robot.getId());
-                    g.chooseNextEdge(robot.getId(), dest);
+            game_service g = my_game.getMy_game();
+            initRobotPath();
+        try {
+            while (g.isRunning()) {
+                int dest = -1;
+                for (int i = 0; i < my_game.getRobot_size(); i++) {
+                    Robot robot = my_game.getRobots().get(i);
+                    if (robot.getDest() == -1) {
+                        dest = nextNode(i);
+                        g.chooseNextEdge(i, dest);
+                    }
                 }
             }
+        }
+        catch (Exception ex)
+        {
+
         }
     }
 

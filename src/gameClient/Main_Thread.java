@@ -77,25 +77,35 @@ public class Main_Thread extends Thread {
      */
     @Override
     public void run() {
-        game_service client_game = this.game.getMy_game();
-        client_game.startGame();
-        if(mode==1)
-        {
-            Algo_Game ag=new Algo_Game(game);
-            ag.start();
-        }
-        while (client_game.isRunning()) {
-            try {
-                Thread.sleep(150);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+
+            game_service client_game = this.game.getMy_game();
+            client_game.startGame();
+            if (mode == 1) {
+                Algo_Game ag = new Algo_Game(game);
+                ag.start();
             }
-            client_game.move();
-            this.game.Update();
-            game_gui.repaint();
+            int dt=100;
+        try {
+            while (client_game.isRunning()) {
+                if(client_game.timeToEnd()<=10000&&stage>=20)
+                {
+                    dt=50;
+                }
+                Thread.sleep(dt);
+                client_game.move();
+                this.game.Update();
+                game_gui.repaint();
+            }
         }
+        catch (Exception ex)
+        {
+
+        }
+
         km.kmlEnd();
-        JOptionPane.showMessageDialog(game_gui,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
+        this.game_gui.setVisible(false);
+        System.exit(0);
     }
 
     /**

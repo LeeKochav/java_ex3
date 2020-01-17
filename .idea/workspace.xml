@@ -7,11 +7,8 @@
       <change beforePath="$PROJECT_DIR$/data/2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Fruit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/KML_Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/KML_Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Robot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,14 +35,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/GameServer_v0.27.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Tests" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="gameClient" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\data" />
@@ -66,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main_Thread">
+  <component name="RunManager" selected="JUnit.FruitTest">
     <configuration name="Main_Thread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gameClient.Main_Thread" />
       <module name="Ex3" />
@@ -93,19 +100,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="My_Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gameClient.My_Game" />
-      <module name="Ex3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameClient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SimpleGameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gameClient.SimpleGameClient" />
       <module name="Ex3" />
@@ -119,7 +113,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Graph_AlgoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FruitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex3" />
       <extension name="coverage">
         <pattern>
@@ -128,7 +122,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.Graph_AlgoTest" />
+      <option name="MAIN_CLASS_NAME" value="Tests.FruitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.RobotTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,10 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FruitTest" />
         <item itemvalue="Application.Main_Thread" />
+        <item itemvalue="JUnit.RobotTest" />
         <item itemvalue="Application.MyGameGUI" />
         <item itemvalue="Application.SimpleGameClient" />
-        <item itemvalue="JUnit.Graph_AlgoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +171,7 @@
       <workItem from="1578474377584" duration="159000" />
       <workItem from="1578495481411" duration="739000" />
       <workItem from="1578640220638" duration="117564000" />
-      <workItem from="1579162447713" duration="13496000" />
+      <workItem from="1579162447713" duration="25006000" />
     </task>
     <servers />
   </component>
