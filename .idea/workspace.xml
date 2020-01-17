@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Tests/Algo_GameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tests/GameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tests/KML_LoggerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,11 +54,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lee\IdeaProjects\Ex3\resources" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\data" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\src\gameClient" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\lib" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\src" />
-      <recent name="C:\Users\Lee\IdeaProjects\Ex3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -77,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.KML_LoggerTest">
+  <component name="RunManager" selected="Application.Main_Thread">
     <configuration name="Main_Thread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gameClient.Main_Thread" />
       <module name="Ex3" />
@@ -154,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main_Thread" />
         <item itemvalue="JUnit.KML_LoggerTest" />
         <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.Algo_GameTest" />
         <item itemvalue="JUnit.GameTest.setGetFruits" />
-        <item itemvalue="Application.Main_Thread" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +176,7 @@
       <workItem from="1578474377584" duration="159000" />
       <workItem from="1578495481411" duration="739000" />
       <workItem from="1578640220638" duration="117564000" />
-      <workItem from="1579162447713" duration="40762000" />
+      <workItem from="1579162447713" duration="46233000" />
     </task>
     <servers />
   </component>

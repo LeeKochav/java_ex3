@@ -1,76 +1,120 @@
-# Ex3
-In this project we represnt an implementation of directed weighted graph , graphic interface (GUI) of the graph and mathemtical graph algorithms.
+# Ex3 The Maze Of Waze
 
-![alt text](resources/graph_screenshot.PNG "graph_example")
+In this project we represnt an implementation of the game "The Maze Of Waze".
+This assignment data structures and algorithms are based on previous project Ex2:
+[https://github.com/LeeKochav/java_ex2](https://github.com/LeeKochav/java_ex2)
 
-## Class Node
-This class represent a node (vertex) in a (directional) weighted graph and operations applicable on it based on node_data interface.
-Node attributes:
-- key;
-- location;
-- info;
-- tag;
-- weight;
+The main goal of the project is to:
+- Develop a logic for a game in which a group of robots must perform movement tasks (fruit collection) on a weighted graph.
+- Create KML files that exemplify the game in google earth.
+- Collect as many fruits as possible and perform minimum robots moves during limited time of the game.
 
-## Class Edge
-This class represent a directional edge(src,dest) in a (directional) weighted graph and operations applicable on it based on edge_data interface.
-Edge attributes:
-- src;
-- dst;
-- tag;
-- weight;
-- info;
+![alt text](resources/game_example.PNG "game_example")
 
-## Class DGraph
-This class represent a a directional weighted graph that support a large number of nodes (over 100,000) operations applicable on it based on graph interface.
-Graph attributes:
-- nodes
-- edges
+## How to play  
 
-## Class Graph_Algo
-This class represent the "regular" Graph Theory algorithms including:
-- clone();
-- init(String file_name);
-- save(String file_name);
-- isConnected();
-- double shortestPathDist(int src, int dest);
-- List<Node> shortestPath(int src, int dest); 
-- List<node_data> TSP(List<Integer> targets);
+1. Launch the game
 
-Algorithm implementation is based on Dijkstra's algorithm:
-[https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+![alt text](resources/welcome.PNG "welcome")
 
-## Class Graph_GUI
-This class represent a graphic interface of a graph. For drawing functions on graph we used JFRAM based on swing and awt Libraries. 
-Operations that are applicable on it including:
+2. Insert a stage (0-23 options)
 
-### File
-- save
-- load
+![alt text](resources/welcome2.PNG "welcome2")
+
+3. Select mode 
+- There are two modes to play to game:
+	- Manual
+		- In manual mode in order to move the robots, click on the screen a message with the robot number appears and insert the destination node for that robot.
+		- Note: only neighbors nodes are valid for robot movement, meaning that the source node and the destination node share an edge, .
+	- Automate 
+		- In Automate mode the robots are moving according an algorithm we developed.
 		
-### Algorithms
-- isConnected
-- shortestPathDist
-- shortestPath
-- TSP	
-		
-### Add/Remove Node
-- addNode
-- removeNode
-		
-### Add/Remove Edge
-- connect\addEdge
-- removeEdge
-		
-## Relevant files for testing 
-- test.txt
+![alt text](resources/welcome3.PNG "welcome3")
+
+**NOW THE GAME BEGINS**
+
+- In the end of the game the score will appear on the screen.
+
+## Fruit class
+
+This class represents the set of operations applicable on a fruit.
+
+**Example:**
+```java
+String s="{\"Fruit\":{\"value\":" + value + "," + "\"type\":" + type + "," + "\"pos\":\"" + pos.toString()+ "\"" + "}" + "}";
+Fruit fruit=new Fruit(s);
+```
+
+## Robot class
+
+This class represents the set of operations applicable on a robot.
+
+**Example:**
+```java
+String s="{\"Robot\":{\"id\":"+id+",\"value\":"+value+",\"src\":"+src+",\"dest\":"+dest+",\"speed\":"+speed+",\"pos\":\""+pos+"\"}}";
+Robot robot=new Robot(s);
+```
+
+## Game class
+
+This class represents a game scenario of the "MAZE OF WAZE game" depends of a stage, [0-24], that is given.
+This class uses a given an imported jar file -Game_Server that implemented a set of operations applicable on a game.
+
+**Example:**
+```java
+int stage=3; 
+Game game=new Game(stage) //stage options (0-23)
+```
+
+## MyGameGUI class
+
+This class represents a Graphical User Interface - GUI of the game.
+
+**Example:**
+```java
+int stage=3; 
+int mode;
+Game game=new Game(stage) //stage options (0-23)
+MyGameGUI game_gui=new MyGameGUI(game,mode); //mode 0|1 (manual | automate)
+```
+
+## Main_Thread class
+
+This class represents the engine of the the "MAZE OF WAZE" game.
+
+**Example:**
+```java
+Main_Thread client=new Main_Thread();
+client.start();
+```
+
+## Algo_Game class
+
+This class represent the game when the mode is automate.
+
+**Example:**
+```java
+int stage=3; 
+Game game=new Game(stage) //stage options (0-23)
+Algo_Game algo_game=new Algo_Game(game);
+```
+
+## KML_Logger class
+
+This class represent a KML_Logger object that creates a KML file for each game.
+
+**Example:**
+```java
+int stage=3; 
+KML_Logger km=new KML_Logger(stage);
+```
 
 ## External libraries
 1. junit-jupiter-api-5.4.0
 2. junit-platform-commons-1.4.0
 
 
-More details can be found on Wiki
+More details can be found on Wiki.
 
 	
 	

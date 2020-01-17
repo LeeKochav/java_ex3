@@ -9,7 +9,7 @@ import javax.swing.*;
  * Main_Thread attributes:
  * 1. Game
  * 2.MyGameGui
- * 3.stage - game scenario [0-24]
+ * 3.stage - game scenario [0-23]
  * 4.mode- manual/ automate
  * 5-km - KML_Logger element for the KML files.
  */
@@ -103,10 +103,9 @@ public class Main_Thread extends Thread {
         {
 
         }
-
         km.kmlEnd();
         JOptionPane.showMessageDialog(null,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
-        this.game_gui.setVisible(false);
+        game_gui.setVisible(false);
         System.exit(0);
     }
 
