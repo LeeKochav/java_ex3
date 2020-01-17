@@ -141,7 +141,6 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
      */
     private void paintFruits(Graphics2D g) {
         synchronized (my_game.getFruits()) {
-            System.out.println((my_game.getFruits()));
             double[] x_toScale = my_game.getScale_x();
             double[] y_toScale = my_game.getScale_y();
             for (Fruit fruit : my_game.getFruits()) {

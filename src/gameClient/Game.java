@@ -32,6 +32,13 @@ public class Game {
     private double[] scale_x = new double[2];
     private double[] scale_y = new double[2];
 
+    /**
+     * Default constructor
+     */
+    public Game(){
+        fruits = new ArrayList<Fruit>();
+        robots = new Hashtable<>();
+    }
 
     /**
      * Constructor given a game scenario [0-24], launch a game service and init the game attributes.

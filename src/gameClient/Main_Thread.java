@@ -84,17 +84,19 @@ public class Main_Thread extends Thread {
                 Algo_Game ag = new Algo_Game(game);
                 ag.start();
             }
-            int dt=100;
+            int dt=40;
+            int ind=0;
         try {
             while (client_game.isRunning()) {
-                if(client_game.timeToEnd()<=10000&&stage>=20)
-                {
-                    dt=50;
-                }
+
                 Thread.sleep(dt);
-                client_game.move();
+                ind++;
                 this.game.Update();
-                game_gui.repaint();
+                if(ind%2==0) {
+                    client_game.move();
+                    game_gui.repaint();
+                }
+
             }
         }
         catch (Exception ex)

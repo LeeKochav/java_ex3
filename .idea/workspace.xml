@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tests/Algo_GameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tests/GameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tests/KML_LoggerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Algo_Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Fruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" afterDir="false" />
     </list>
@@ -46,6 +49,7 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Tests" />
+      <recent name="gameClient" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="gameClient" />
@@ -73,7 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FruitTest">
+  <component name="RunManager" selected="JUnit.KML_LoggerTest">
     <configuration name="Main_Thread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gameClient.Main_Thread" />
       <module name="Ex3" />
@@ -87,33 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyGameGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gameClient.MyGameGUI" />
-      <module name="Ex3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameClient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleGameClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gameClient.SimpleGameClient" />
-      <module name="Ex3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameClient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FruitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Algo_GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex3" />
       <extension name="coverage">
         <pattern>
@@ -122,13 +100,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.FruitTest" />
+      <option name="MAIN_CLASS_NAME" value="Tests.Algo_GameTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex3" />
       <extension name="coverage">
         <pattern>
@@ -137,7 +115,38 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.RobotTest" />
+      <option name="MAIN_CLASS_NAME" value="Tests.GameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.setGetFruits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.GameTest" />
+      <option name="METHOD_NAME" value="setGetFruits" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KML_LoggerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.KML_LoggerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FruitTest" />
+        <item itemvalue="JUnit.KML_LoggerTest" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.Algo_GameTest" />
+        <item itemvalue="JUnit.GameTest.setGetFruits" />
         <item itemvalue="Application.Main_Thread" />
-        <item itemvalue="JUnit.RobotTest" />
-        <item itemvalue="Application.MyGameGUI" />
-        <item itemvalue="Application.SimpleGameClient" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +180,7 @@
       <workItem from="1578474377584" duration="159000" />
       <workItem from="1578495481411" duration="739000" />
       <workItem from="1578640220638" duration="117564000" />
-      <workItem from="1579162447713" duration="25006000" />
+      <workItem from="1579162447713" duration="40762000" />
     </task>
     <servers />
   </component>

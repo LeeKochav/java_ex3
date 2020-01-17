@@ -35,7 +35,12 @@ public class Algo_Game extends Thread {
     @Override
     public void run() {
             game_service g = my_game.getMy_game();
-            initRobotPath();
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        initRobotPath();
         try {
             while (g.isRunning()) {
                 int dest = -1;
