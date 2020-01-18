@@ -85,24 +85,17 @@ public class KML_Logger {
      */
     public void addPlaceMark(String id, String location)
     {
-        //Create formatter
-        DateTimeFormatter FOMATTER = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        //Local date time instance
-        LocalDateTime localDateTime = LocalDateTime.now();
-        //Get formatted String
-        String ldtString = FOMATTER.format(localDateTime);
-
-        info.append(
-                "    <Placemark>\r\n" +
-                        "      <TimeStamp>\r\n" +
-                        "        <when>" + ldtString+ "</when>\r\n" +
-                        "      </TimeStamp>\r\n" +
-                        "      <styleUrl>#" + id + "</styleUrl>\r\n" +
-                        "      <Point>\r\n" +
-                        "        <coordinates>" + location + "</coordinates>\r\n" +
-                        "      </Point>\r\n" +
-                        "    </Placemark>\r\n"
-        );
+        LocalDateTime now = LocalDateTime.now();
+        info.append("    <Placemark>\r\n");
+        info.append("      <TimeStamp>\r\n");
+        info.append("        <when>" + now + "</when>\r\n");
+        info.append("      </TimeStamp>\r\n");
+        info.append("      <styleUrl>#" + id + "</styleUrl>\r\n");
+        info.append("      <Point>\r\n");
+        info.append("        <coordinates>" + location + "</coordinates>\r\n");
+        info.append("      </Point>\r\n");
+        info.append("    </Placemark>\r\n");
+        
 
     }
 
