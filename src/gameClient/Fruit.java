@@ -33,7 +33,7 @@ public class Fruit {
     }
 
     /**
-     * Constructor init fruit attributes from a json string input.
+         * Constructor init fruit attributes from a json string input.
      *
      * @param jsonSTR
      */

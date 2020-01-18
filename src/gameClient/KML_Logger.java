@@ -18,6 +18,10 @@ public class KML_Logger {
     private StringBuilder info;
 
     /**
+     * Default constructor
+     */
+    public  KML_Logger(){}
+    /**
      * Constructor, initialize the object and concat the standard start of a KML file.
      * @param stage
      */

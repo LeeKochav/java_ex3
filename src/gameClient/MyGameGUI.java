@@ -25,6 +25,11 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
     private static int HEIGHT = 1000;
     private static int WIDTH = 1000;
 
+
+    /**
+     * Default constructor
+     */
+    public MyGameGUI(){}
     /**
      * Constructor of MyGameGui initialize the game by a given stage input, mode of the game and the GUI frame.
      *

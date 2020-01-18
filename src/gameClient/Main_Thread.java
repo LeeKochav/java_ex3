@@ -22,15 +22,15 @@ public class Main_Thread extends Thread {
     private  static int mode;
     public static KML_Logger km=null;
 
+
     /**
      * Constructor initialize Main_Thread attributes
      */
     public Main_Thread()
     {
-        km=new KML_Logger(stage);
         game =new Game(stage);
         game_gui=new MyGameGUI(game,mode);
-
+        km=new KML_Logger(stage);
     }
 
     /**

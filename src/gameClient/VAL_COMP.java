@@ -2,6 +2,9 @@ package gameClient;
 
 import java.util.Comparator;
 
+/**
+ * This class represents a comparator that compare fruits values
+ */
 public class VAL_COMP implements Comparator<Fruit> {
 
     public VAL_COMP(){}

@@ -19,6 +19,12 @@ public class Algo_Game extends Thread {
     private Graph_Algo ag;
     private Hashtable<Integer, List<node_data>> robots_paths;
 
+
+    /**
+     * Default constructor
+     */
+    public Algo_Game(){}
+
     /**
      * Constructor initialize Algo_game attributes
      * @param game
