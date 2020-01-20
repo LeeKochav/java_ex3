@@ -29,9 +29,9 @@ public class Main_Thread extends Thread {
      */
     public Main_Thread()
     {
+        km=new KML_Logger(stage);
         game =new Game(stage);
         game_gui=new MyGameGUI(game,mode);
-        km=new KML_Logger(stage);
     }
 
     /**
@@ -109,7 +109,16 @@ public class Main_Thread extends Thread {
         {
             ex.printStackTrace();
         }
-        String s=km.kmlEnd();
+        String s="";
+        try
+        {
+        int option = JOptionPane.showConfirmDialog(null, "Would you like to export the game to KML file?", "INFORMATION", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) {
+            s=km.kmlEnd();
+        }
+        } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
         JOptionPane.showMessageDialog(null,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
         game_gui.setVisible(false);
     //    System.out.println( client_game.sendKML(s));

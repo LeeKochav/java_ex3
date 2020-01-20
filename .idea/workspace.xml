@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/GameServer_v0_27.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ex3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/0.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/0.kml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/13.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/13.kml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/2.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.kml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/23.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/23.kml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/GameServer_v0.27.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/0.kml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/KML_Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/KML_Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +175,7 @@
       <workItem from="1579372376436" duration="3355000" />
       <workItem from="1579442992066" duration="1970000" />
       <workItem from="1579460562113" duration="1561000" />
-      <workItem from="1579508738327" duration="16193000" />
+      <workItem from="1579508738327" duration="18832000" />
     </task>
     <servers />
   </component>
@@ -203,5 +194,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gameClient/Main_Thread.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gameClient/Main_Thread.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

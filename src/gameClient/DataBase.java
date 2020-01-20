@@ -44,18 +44,25 @@ public class DataBase {
     }
 
 
-
+    /**
+     * Close query function
+     * @param resultSet
+     */
     private static void closeQuery(ResultSet resultSet) {
         try {
             resultSet.close();
             connection.close();
             statement.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
+    /**
+     * Count the number of games that played by user ID
+     * @param id
+     * @return
+     */
     public static int gamesPlayed(int id) {
         ResultSet resultSet = doQuery("select * from Logs where userID = " + id);
         int count = 0;
@@ -64,7 +71,6 @@ public class DataBase {
                 count++;
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -72,6 +78,12 @@ public class DataBase {
         return count;
     }
 
+    /**
+     * Function that returns the best results of the user in each game stage.
+     * Group by to exclude the highest result and treeMap to remove duplicates.
+     * @param id
+     * @return
+     */
     public static TreeMap<Integer, String> myBestResults(int id) {
         String query = "SELECT * FROM Logs as logs inner join (" + "SELECT max(score) as score, levelID FROM Logs"
                 + " where userID = " + id + " group by levelID" + ") as groupedLogs"
@@ -93,6 +105,12 @@ public class DataBase {
         return tp;
     }
 
+    /**
+     * Function that returns the best results of all user for 11 stages.
+     * Group by to exclude the highest result and treeMap to remove duplicates.
+     * @param id
+     * @return
+     */
     public static TreeMap<String, String> gameBestResults() {
         String query = "SELECT * FROM Logs as logs inner join ("
                 + "SELECT max(score) as score, levelID, userID FROM Logs" + "	group by levelID,userID"

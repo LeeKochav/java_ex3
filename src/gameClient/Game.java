@@ -38,7 +38,6 @@ public class Game {
     public Game(){
         fruits = new ArrayList<Fruit>();
         robots = new Hashtable<>();
-        setKML();
     }
 
     /**
@@ -56,6 +55,7 @@ public class Game {
         setFruits();
         initRobots();
         setRobots();
+        setKML();
     }
 
     /**
@@ -316,6 +316,7 @@ public class Game {
        {
            if (Main_Thread.km != null) {
                Main_Thread.km.addPlaceMark("node", node.getLocation().toString());
+
            }
         }
 
