@@ -1,5 +1,7 @@
 package gameClient;
 
+import utils.Point3D;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -102,11 +104,26 @@ public class KML_Logger {
 
     }
 
+    public void addEdgePlacemark(Point3D src, Point3D dest) {
+
+        info.append("<Placemark>\r\n" +
+                "<LineString>\r\n" +
+                "<extrude>5</extrude>\r\n" +
+                "<altitudeMode>clampToGround</altitudeMode>\r\n" +
+                "<coordinates>\r\n" +
+                src.toString()+"\r\n" +
+                dest.toString()+"\r\n" +
+                "</coordinates>" +
+                "</LineString></Placemark>"
+        );
+
+    }
+
     /**
      * Concat the closing string for the KML file.
      * Creates a kml file name=stage.kml and save it to the data folder in this project.
      */
-    public void kmlEnd()
+    public String kmlEnd()
     {
         info.append("  \r\n</Document>\r\n" +
                 "</kml>"
@@ -121,6 +138,7 @@ public class KML_Logger {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        return info.toString();
     }
 
     }

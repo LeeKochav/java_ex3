@@ -1,5 +1,6 @@
 package gameClient;
 
+import Server.Game_Server;
 import Server.game_service;
 
 import javax.swing.*;
@@ -77,35 +78,41 @@ public class Main_Thread extends Thread {
      */
     @Override
     public void run() {
-
+        int id = 999;
+     //   Game_Server.login(id);
             game_service client_game = this.game.getMy_game();
             client_game.startGame();
+            Algo2 ag=null;
             if (mode == 1) {
-                Algo_Game ag = new Algo_Game(game);
-                ag.start();
+                //Algo_Game ag = new Algo_Game(game);
+                //ag.start();
+                ag=new Algo2(game);
             }
-            int dt=40;
+            int dt=45;
             int ind=0;
         try {
             while (client_game.isRunning()) {
-
-                Thread.sleep(dt);
-                ind++;
-                this.game.Update();
+                if(mode==1)
+                {
+                    ag.MoveRobots();
+                }
                 if(ind%2==0) {
                     client_game.move();
-                    game_gui.repaint();
+                    this.game.Update();
                 }
-
+                game_gui.repaint();
+                Thread.sleep(dt);
+                ind++;
             }
         }
         catch (Exception ex)
         {
-
+            ex.printStackTrace();
         }
-        km.kmlEnd();
+        String s=km.kmlEnd();
         JOptionPane.showMessageDialog(null,this.game.getMy_game().toString(),"GAME OVER",JOptionPane.INFORMATION_MESSAGE);
         game_gui.setVisible(false);
+    //    System.out.println( client_game.sendKML(s));
         System.exit(0);
     }
 

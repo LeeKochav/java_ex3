@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13deab4f-6290-4fac-aca5-f29a0ec2b318" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/data/0.kml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/1.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/GameServer_v0_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ex3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ex3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/0.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/0.kml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/13.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/13.kml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/2.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/2.kml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/23.kml" beforeDir="false" afterPath="$PROJECT_DIR$/data/23.kml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/GameServer_v0.27.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/DGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameClient/KML_Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/KML_Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/Main_Thread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameClient/MyGameGUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -35,7 +45,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/GameServer_v0.27.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-5.1.47.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -52,10 +62,10 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Lee\IdeaProjects\Ex3\resources" />
-      <recent name="C:\Users\Lee\IdeaProjects\Ex3\data" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\src\gameClient" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\lib" />
+      <recent name="C:\Users\Lee\IdeaProjects\Ex3\resources" />
+      <recent name="C:\Users\Lee\IdeaProjects\Ex3\data" />
       <recent name="C:\Users\Lee\IdeaProjects\Ex3\src" />
     </key>
   </component>
@@ -72,6 +82,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main_Thread">
+    <configuration name="Ex4_Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameClient.Ex4_Client" />
+      <module name="Ex3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main_Thread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gameClient.Main_Thread" />
       <module name="Ex3" />
@@ -85,17 +108,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Algo_GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameClient.SimpleDB" />
       <module name="Ex3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tests.*" />
+          <option name="PATTERN" value="gameClient.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.Algo_GameTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,22 +132,6 @@
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.GameTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameTest.setGetFruits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.GameTest" />
-      <option name="METHOD_NAME" value="setGetFruits" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,10 +154,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main_Thread" />
+        <item itemvalue="Application.SimpleDB" />
+        <item itemvalue="Application.Ex4_Client" />
         <item itemvalue="JUnit.KML_LoggerTest" />
         <item itemvalue="JUnit.GameTest" />
-        <item itemvalue="JUnit.Algo_GameTest" />
-        <item itemvalue="JUnit.GameTest.setGetFruits" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +181,10 @@
       <workItem from="1578640220638" duration="117564000" />
       <workItem from="1579162447713" duration="46440000" />
       <workItem from="1579337792930" duration="4903000" />
-      <workItem from="1579372376436" duration="1921000" />
+      <workItem from="1579372376436" duration="3355000" />
+      <workItem from="1579442992066" duration="1970000" />
+      <workItem from="1579460562113" duration="1561000" />
+      <workItem from="1579508738327" duration="16193000" />
     </task>
     <servers />
   </component>

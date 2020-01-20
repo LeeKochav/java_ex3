@@ -38,6 +38,7 @@ public class Game {
     public Game(){
         fruits = new ArrayList<Fruit>();
         robots = new Hashtable<>();
+        setKML();
     }
 
     /**
@@ -309,5 +310,24 @@ public class Game {
         return this.robots.size();
     }
 
+   public void setKML()
+   {
+       for (node_data node: graph.getV())
+       {
+           if (Main_Thread.km != null) {
+               Main_Thread.km.addPlaceMark("node", node.getLocation().toString());
+           }
+        }
+
+       for (node_data node: graph.getV()) {
+           for (edge_data edge: graph.getE(node.getKey())){
+               if (Main_Thread.km != null) {
+                   node_data src=graph.getNode(edge.getSrc());
+                   node_data dst=graph.getNode(edge.getDest());
+                   Main_Thread.km.addEdgePlacemark(src.getLocation(),dst.getLocation());
+               }
+           }
+       }
+   }
 
 }

@@ -200,9 +200,6 @@ public class DGraph implements graph , Serializable {
 				String pos = nodes.getJSONObject(i).getString("pos");
 				Point3D p = new Point3D(pos);
 				node_data node=new Node(s,p);
-				if (Main_Thread.km != null) {
-					Main_Thread.km.addPlaceMark("node", node.getLocation().toString());
-				}
 				this.addNode(node);
 			}
 

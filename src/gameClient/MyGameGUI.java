@@ -4,6 +4,7 @@ import dataStructure.edge_data;
 import dataStructure.node_data;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +12,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * This class represents a Graphical User Interface - GUI of the game.
@@ -24,12 +27,16 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
     public int mode;
     private static int HEIGHT = 1000;
     private static int WIDTH = 1000;
-
+    public static final String jdbcUrl = "jdbc:mysql://db-mysql-ams3-67328-do-user-4468260-0.db.ondigitalocean.com:25060/oop?useUnicode=yes&characterEncoding=UTF-8&useSSL=false";
+    public static final String jdbcUser = "student";
+    public static final String jdbcUserPassword = "OOP2020student";
 
     /**
      * Default constructor
      */
-    public MyGameGUI(){}
+    public MyGameGUI() {
+    }
+
     /**
      * Constructor of MyGameGui initialize the game by a given stage input, mode of the game and the GUI frame.
      *
@@ -49,10 +56,26 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
     private void init() {
         this.setBounds(200, 0, WIDTH, HEIGHT);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MenuBar menuBar = new MenuBar();
+        Menu menu = new Menu("Game information");
+        menu.setFont(new Font("deafult", Font.BOLD, 12));
+        MenuItem Userscore = new MenuItem("User score");
+        MenuItem GameScore = new MenuItem("Game score");
+        Userscore.setFont(new Font("deafult", Font.BOLD, 12));
+        GameScore.setFont(new Font("deafult", Font.BOLD, 12));
+        Userscore.addActionListener(this);
+        GameScore.addActionListener(this);
+        menu.add(Userscore);
+        menu.add(GameScore);
+        menuBar.add(menu);
+
+        this.setMenuBar(menuBar);
         this.setTitle("My Game GUI");
+
         if (this.mode == 0) {
             addMouseListener(this);
         }
+
         this.setVisible(true);
     }
 
@@ -98,8 +121,8 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
         double[] x_toScale = my_game.getScale_x();
         double[] y_toScale = my_game.getScale_y();
         g.setColor(Color.BLACK);
-        g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("Time left: " + (my_game.getMy_game().timeToEnd() / 1000), 70, 70);
+        g.setFont(new Font("Arial", Font.BOLD, 15));
+        g.drawString("Time left: " + (my_game.getMy_game().timeToEnd() / 1000), 800, 80);
         for (node_data node : this.my_game.getGraph().getV()) {
 
             int node_x = (int) scale(node.getLocation().x(), x_toScale[0], x_toScale[1], 50, WIDTH - 50);
@@ -173,7 +196,7 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
         double[] y_toScale = my_game.getScale_y();
         List<String> rob = my_game.getMy_game().getRobots();
         for (int i = 1; i <= rob.size(); i++) {
-            g.drawString(rob.get(i - 1), 150, 70 + (20 * i));
+            g.drawString(rob.get(i - 1), 150, 100 + (20 * i));
         }
         for (int i = 0; i < my_game.getRobot_size(); i++) {
             Robot robot = my_game.getRobots().get(i);
@@ -188,6 +211,27 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        String str=e.getActionCommand();
+
+        switch (str) {
+
+            case "User score":
+                int id = 999;
+
+                try {
+                    String id_str = JOptionPane.showInputDialog(this, "Please insert id");
+                    id = Integer.parseInt(id_str);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                showUserResults(id);
+                break;
+
+            case "Game score":
+                showGameResults();
+                break;
+            default:
+        }
     }
 
     /**
@@ -199,6 +243,7 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
      * 2. In the start of the game all robots destinations are set to -1.
      * Only neighbors nodes, source node and destination share an edge, are valid for robot movement.
      * New destination is set by the chooseNextEdge function from the game server.
+     *
      * @param e
      */
     @Override
@@ -237,4 +282,52 @@ public class MyGameGUI extends JFrame implements ActionListener, MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
+
+
+    private void showUserResults(int id) {
+        String[] columnNames = { "UserID", "LevelID", "score", "moves", "time" };
+        JFrame frame1 = new JFrame("My Game Results, Games Played: " + DataBase.gamesPlayed(id));
+        frame1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame1.setLayout(new BorderLayout());
+        DefaultTableModel tableModel = new DefaultTableModel();
+        for (String columnName : columnNames) {
+            tableModel.addColumn(columnName);
+        }
+        TreeMap<Integer, String> tp = DataBase.myBestResults(id);
+        for (Map.Entry<Integer, String> entry : tp.entrySet()) {
+            tableModel.addRow(entry.getValue().split(","));
+        }
+
+        JTable table = new JTable(tableModel);
+        JScrollPane scroll = new JScrollPane(table);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        frame1.add(scroll);
+        frame1.setSize(600, 400);
+        frame1.setVisible(true);
+    }
+
+    private void showGameResults() {
+        String[] columnNames = { "UserID", "LevelID", "score", "moves", "time" };
+        JFrame frame1 = new JFrame("Game Results");
+        frame1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame1.setLayout(new BorderLayout());
+        DefaultTableModel tableModel = new DefaultTableModel();
+        for (String columnName : columnNames) {
+            tableModel.addColumn(columnName);
+        }
+        TreeMap<String, String> tp = DataBase.gameBestResults();
+        for (Map.Entry<String, String> entry : tp.entrySet()) {
+            tableModel.addRow(entry.getValue().split(","));
+        }
+
+        JTable table = new JTable(tableModel);
+        JScrollPane scroll = new JScrollPane(table);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        frame1.add(scroll);
+        frame1.setSize(400, 300);
+        frame1.setVisible(true);
+    }
+
 }
